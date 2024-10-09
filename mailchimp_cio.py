@@ -1,3 +1,10 @@
+""" 
+All you need to do is edit the fields at the bottom with your 
+audience id and api key and it should work, I would do a test run first 
+because I think it has problem with images
+"""
+
+
 import pandas as pd
 from mailchimp_marketing import Client
 from mailchimp_marketing.api_client import ApiClientError
@@ -64,14 +71,15 @@ def main(file_path, api_key, audience_id, subject, from_email, from_name):
 
     # Create and send Mailchimp campaign
     create_campaign(mailchimp, audience_id, subject, from_email, from_name, html_content)
+    
+#EDIT HERE BELOW
 
-# Example usage
 if __name__ == "__main__":
-    file_path = "newsletter_data.xlsx"  # Path to your Excel file
-    api_key = "your-mailchimp-api-key"
-    audience_id = "your-mailchimp-audience-id"
-    subject = "Your Newsletter Subject"
-    from_email = "your-email@example.com"
+    file_path = "newsletter_data.xlsx"  # Path to your Excel file, You can change the name
+    api_key = "b29e0d807288c91da394f7e7c568b072-us13" #TEST API KEY, REMOVE
+    audience_id = "5e858125b0" #TEST AUDIENCE ID, REMOVE
+    subject = "Your Newsletter Subject" 
+    from_email = "Youremail@email.com"
     from_name = "Your Name"
 
     main(file_path, api_key, audience_id, subject, from_email, from_name)
